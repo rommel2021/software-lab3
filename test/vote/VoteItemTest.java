@@ -10,8 +10,9 @@ class VoteItemTest {
 	// TODO
 	
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testString() {
+		VoteItem<String> voteItem = new VoteItem<String>("item1","Ö§³Ö");
+
 	}
 
 }

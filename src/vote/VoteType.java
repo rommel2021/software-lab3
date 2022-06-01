@@ -2,6 +2,7 @@ package vote;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 //immutable
 public class VoteType {
@@ -10,15 +11,18 @@ public class VoteType {
 	private Map<String, Integer> options = new HashMap<>();
 
 	// Rep Invariants
-	// TODO
+	// 一个名为options的Map记录选项名和分数的对应关系，映射到数个被选项
 	// Abstract Function
-	// TODO
+	// Map的key不为null，value为整数（可正可负可为零）
 	// Safety from Rep Exposure
-	// TODO
+	// options设置为private的，不会泄露
 
-	private boolean checkRep() {
+	private void checkRep() {
 		// TODO
-		return false;
+		for(String name:options.keySet()){
+			assert name!=null;
+		}
+
 	}
 
 	/**
@@ -26,8 +30,13 @@ public class VoteType {
 	 * 
 	 * 可以自行设计该方法所采用的参数
 	 */
-	public VoteType(/* TODO */) {
+	public VoteType(){
+
+	}
+	public VoteType(Map<String,Integer> options) {
 		// TODO
+		this.options=options;
+		checkRep();
 	}
 
 	/**
@@ -39,7 +48,7 @@ public class VoteType {
 		// TODO
 	}
 
-	/**
+	/** done
 	 * 判断一个投票选项是否合法（用于Poll中对选票的合法性检查）
 	 * 
 	 * 例如，投票人给出的投票选项是“Strongly reject”，但options中不包含这个选项，因此它是非法的
@@ -51,10 +60,14 @@ public class VoteType {
 	 */
 	public boolean checkLegality(String option) {
 		// TODO
+		for(String str: options.keySet()){
+			if(str.equals(option))
+				return true;
+		}
 		return false;
 	}
 
-	/**
+	/** done
 	 * 根据一个投票选项，得到其对应的分数
 	 * 
 	 * 例如，投票人给出的投票选项是“支持”，查询得到其对应的分数是1
@@ -66,18 +79,23 @@ public class VoteType {
 	 */
 	public int getScoreByOption(String option) {
 		// TODO
+		for(String str: options.keySet()){
+			if(str.equals(option))
+				return options.get(option);
+		}
 		return 0;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		VoteType voteType = (VoteType) o;
+		return Objects.equals(options, voteType.options);
 	}
 
 	@Override
 	public int hashCode() {
-		// TODO
-		return 0;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		// TODO
-		return false;
+		return Objects.hash(options);
 	}
 }

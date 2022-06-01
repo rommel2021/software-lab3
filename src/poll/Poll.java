@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
+import auxiliary.Proposal;
 import auxiliary.Voter;
 import pattern.SelectionStrategy;
 import pattern.StatisticsStrategy;
@@ -19,7 +20,7 @@ public interface Poll<C> {
 	 */
 	public static <C> Poll<C> create() {
 		// TODO
-		return null;
+		return new GeneralPollImpl<C>();
 	}
 
 	/**
@@ -37,6 +38,7 @@ public interface Poll<C> {
 	 * 
 	 * @param candidates 候选人清单
 	 */
+
 	public void addCandidates(List<C> candidates);
 
 	/**
@@ -55,8 +57,8 @@ public interface Poll<C> {
 
 	/**
 	 * 按规则计票
-	 * 
-	 * @param 所采取的计票规则策略类
+	 *
+	 * @param
 	 */
 	public void statistics(StatisticsStrategy ss);
 
@@ -73,4 +75,5 @@ public interface Poll<C> {
 	 * @return 一个表示遴选结果的字符串，每行包含：候选对象ID、排序
 	 */
 	public String result();
+
 }

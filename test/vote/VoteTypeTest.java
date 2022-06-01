@@ -1,8 +1,7 @@
 package vote;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
+
 
 class VoteTypeTest {
 
@@ -11,7 +10,7 @@ class VoteTypeTest {
 	
 	@Test
 	void test() {
-		fail("Not yet implemented");
+
 	}
 
 }

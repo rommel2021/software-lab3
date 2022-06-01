@@ -1,21 +1,24 @@
 package app;
 
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import auxiliary.Person;
 import auxiliary.Voter;
+import pattern.SelectionStrategy;
+import pattern.StatisticsStrategy;
 import poll.Poll;
 import vote.RealNameVote;
 import vote.Vote;
 import vote.VoteItem;
 import vote.VoteType;
 
+
 public class ElectionApp {
 
+	/**
+	 *
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		// 创建2个投票人
@@ -32,7 +35,7 @@ public class ElectionApp {
 		types.put("Support", 1);
 		types.put("Oppose", -1);
 		types.put("Waive", 0);
-		VoteType vt = new VoteType(/* TODO */);
+		VoteType vt = new VoteType(types);
 
 		// 创建候选对象：候选人
 		Person p1 = new Person("ABC", 19);
@@ -48,13 +51,23 @@ public class ElectionApp {
 		VoteItem<Person> vi23 = new VoteItem<>(p3, "Waive");
 
 		// 创建2个投票人vr1、vr2的选票
-		Vote<Person> rv1 = new Vote<Person>(/* TODO */);
-		Vote<Person> rv2 = new Vote<Person>(/* TODO */);
+		// voteItemVr1是投票人vr1的选票
+		HashSet<VoteItem<Person>> voteItemsVr1 = new HashSet<VoteItem<Person>>();
+		voteItemsVr1.add(vi11);
+		voteItemsVr1.add(vi12);
+		voteItemsVr1.add(vi13);
+		HashSet<VoteItem<Person>> voteItemsVr2 = new HashSet<VoteItem<Person>>();
+		voteItemsVr2.add(vi21);
+		voteItemsVr2.add(vi22);
+		voteItemsVr2.add(vi23);
+		Vote<Person> rv1 = new Vote<>(voteItemsVr1);
+		Vote<Person> rv2 = new Vote<>(voteItemsVr2);
 
 		// 创建投票活动
 		Poll<Person> poll = Poll.create();
 		// 设定投票基本信息：名称、日期、投票类型、选出的数量
-		poll.setInfo(/* TODO */);
+		//不知道quantity是多少，先填了1
+		poll.setInfo("electAPP",Calendar.getInstance(),vt,1);
 		// 增加投票人及其权重
 		poll.addVoters(weightedVoters);
 		// 增加三个投票人的选票
@@ -62,9 +75,13 @@ public class ElectionApp {
 		poll.addVote(rv2);
 
 		// 按规则计票
-		poll.statistics(/* TODO */);
+		poll.statistics(new StatisticsStrategy() {
+			//TODO
+		});
 		// 按规则遴选
-		poll.selection(/* TODO */);
+		poll.selection(new SelectionStrategy() {
+			//TODO
+		});
 		// 输出遴选结果
 		System.out.println(poll.result());
 	}

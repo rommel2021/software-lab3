@@ -20,7 +20,8 @@ import java.util.*;
 class DinnerOrderTest {
 
 	// test strategy
-	// TODO
+	// 先创建选举对象，创建投票项，添加候选人，然后增加投票人对每个候选人的选择
+	// 依次按照统计策略和选择策略执行，最后输出结果
 	
 	@Test
 	void test() throws Exception {
@@ -83,6 +84,12 @@ class DinnerOrderTest {
 		DinnerSelection dinnerSelection = new DinnerSelection();
 		election.selection(dinnerSelection);
 		System.out.println(election.result());
+
+		//获得
+		Visitor visitor = new VoteLegalVisitor();
+		election.accept(visitor);
+		double result = visitor.getData();
+		System.out.println("选票中合法选票的比例是："+result);
 
 
 	}

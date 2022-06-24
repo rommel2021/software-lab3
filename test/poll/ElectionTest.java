@@ -19,7 +19,8 @@ import java.util.*;
 class ElectionTest {
 	
 	// test strategy
-	// TODO
+	// 先创建选举对象，创建投票项，添加候选人，然后增加投票人对每个候选人的选择
+	// 依次按照统计策略和选择策略执行，最后输出结果
 	
 	@Test
 	void test() throws Exception {

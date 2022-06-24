@@ -21,7 +21,6 @@ public class VoteType {
 	// options设置为private的，并且没有获取Map的方法，不会泄露
 
 	private void checkRep() {
-		// TODO
 		for(String name:options.keySet()){
 			assert name!=null;
 		}
@@ -52,6 +51,21 @@ public class VoteType {
 		//“支持”|“反对”|“弃权”
 		//(\“[\u4e00-\u9fa5]+\”(\(-?[0-9]+\))?\|)+\“[\u4e00-\u9fa5]+\”(\(-?[0-9]+\))?
 		// ?(\(-?[0-9]+\))
+		String[] inputOptions = regex.split("\\|");
+		if(inputOptions.length < 2) {
+			throw new Exception("非法输入:选项少于两个");
+		}
+		for(String s:inputOptions){
+			Pattern str1 = Pattern.compile("\\“[\\u4e00-\\u9fa5]+\\”");
+			Matcher m1 = str1.matcher(s);
+			Pattern str2 = Pattern.compile("\\“[\\u4e00-\\u9fa5]+\\”(\\(-?[0-9]+\\))");
+			Matcher m2 = str1.matcher(s);
+			if(m1.matches() && s.length()>7)
+				throw new Exception("选项长度过长");
+			if(m2.matches() && s.length()>10)
+				throw new Exception("选项长度过长");
+
+		}
 		Pattern str=Pattern.compile("(\\“[\\u4e00-\\u9fa5]+\\”(\\(-?[0-9]+\\))?\\|)+\\“[\\u4e00-\\u9fa5]+\\”(\\(-?[0-9]+\\))?");
 		Matcher m=str.matcher(regex);
 		if(m.matches()){

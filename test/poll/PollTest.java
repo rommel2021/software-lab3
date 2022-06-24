@@ -53,16 +53,6 @@ class PollTest {
 		poll.addVote(votesOf1);
 		poll.addVote(votesOf2);
 
-		//按规则计票
-        StatisticsStrategy statistics = new BusinessStatistics();
-        poll.statistics(statistics);
-
-//        poll.selection(new SelectionStrategy() {
-//            //TODO
-//        });
-
-        //判断结果是否符合预期
-//        assertEquals("",poll.result());
     }
 
 }

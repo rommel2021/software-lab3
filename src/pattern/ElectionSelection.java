@@ -28,6 +28,8 @@ public class ElectionSelection implements SelectionStrategy<Person> {
             }
         }
         for(int i=0;i< persons.size();i++){
+            if(i>=quantity && scores.get(i)!=scores.get(i-1))
+                break;
             results.put(persons.get(i), (double)i+1);
         }
     }

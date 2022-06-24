@@ -18,11 +18,6 @@ public class BusinessVoting extends GeneralPollImpl<Proposal> implements Poll<Pr
     public void checkRep(){
         super.checkRep();
         assert quantity==1;
-        double sum=0;
-        for(double num:voters.values()){
-            sum+=num;
-        }
-        assert sum==1;
     }
 
     @Override

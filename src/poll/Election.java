@@ -20,10 +20,10 @@ public class Election extends GeneralPollImpl<Person> implements Poll<Person> {
 
     public void checkRep(){
         super.checkRep();
-        ArrayList list = new ArrayList<>( voters.values());
-        for(int i=1;i<list.size();i++){
-            assert list.get(i)==list.get(i-1);
-        }
+//        ArrayList list = new ArrayList<>( voters.values());
+//        for(int i=1;i<list.size();i++){
+//            assert list.get(i)==list.get(i-1);
+//        }
         ArrayList<Vote> vs=new ArrayList(votes);
         for(Vote<VoteItem> v:vs){
             for(VoteItem vi:v.getVoteItems()){

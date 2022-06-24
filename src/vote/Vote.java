@@ -16,6 +16,8 @@ public class Vote<C> implements VoteInterface<C>{
 	//投票人信息
 	private Voter voter;
 
+	private boolean isLegal = true;
+
 
 	// Rep Invariants
 	// voteItems不为空
@@ -26,7 +28,6 @@ public class Vote<C> implements VoteInterface<C>{
 	// voteItems和date,voter均为私有，返回时将list改为不可修改的，不会发生泄露
 
 	private void checkRep() {
-		// TODO
 		assert !voteItems.isEmpty();
 	}
 
@@ -81,6 +82,14 @@ public class Vote<C> implements VoteInterface<C>{
 
 	public Voter getVoter(){
 		return voter;
+	}
+
+	public void setIsLegal(boolean isLegal){
+		this.isLegal=isLegal;
+	}
+
+	public boolean getIsLegal(){
+		return this.isLegal;
 	}
 
 	@Override

@@ -3,6 +3,7 @@ package poll;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import auxiliary.Proposal;
 import auxiliary.Voter;
@@ -20,7 +21,6 @@ public interface Poll<C> {
 	 * @return 一个Poll<C>对象
 	 */
 	public static <C> Poll<C> create() {
-		// TODO
 		return new GeneralPollImpl<C>();
 //		return (Poll<C>) new BusinessVoting();
 	}
@@ -76,10 +76,29 @@ public interface Poll<C> {
 	public void selection(SelectionStrategy ss);
 
 	/**
+	 * 接受一个访问者
+	 */
+	void accept(Visitor visitor);
+
+	/**
 	 * 输出遴选结果
 	 * 
 	 * @return 一个表示遴选结果的字符串，每行包含：候选对象ID、排序
 	 */
 	public String result();
+	/**
+	 * 获得合法选票的集合
+	 *
+	 * @return 一个合法选票的集合
+	 */
+	Set<Vote<C>> getLegalVotes();
+
+	/**
+	 * 获得选票的集合
+	 *
+	 * @return 一个选票的集合
+	 */
+	public Set<Vote<C>> getVotes();
+
 
 }

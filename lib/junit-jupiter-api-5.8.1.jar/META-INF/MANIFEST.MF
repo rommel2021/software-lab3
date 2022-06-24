@@ -1,0 +1,45 @@
+Manifest-Version: 1.0
+Build-Date: 2021-09-22
+Build-Revision: 9883ffa5ab9ddb27ce33f6d2ace9f6be16403f40
+Build-Time: 20:54:36.897+0200
+Built-By: JUnit Team
+Bundle-ManifestVersion: 2
+Bundle-Name: JUnit Jupiter API
+Bundle-SymbolicName: junit-jupiter-api
+Bundle-Version: 5.8.1
+Created-By: 11.0.12 (Eclipse Foundation 11.0.12+7)
+Export-Package: org.junit.jupiter.api;version="5.8.1";status=STABLE;us
+ es:="kotlin,kotlin.jvm.functions,kotlin.jvm.internal,org.apiguardian.
+ api,org.junit.jupiter.api.function,org.junit.jupiter.api.parallel,org
+ .junit.platform.commons.annotation,org.opentest4j",org.junit.jupiter.
+ api.condition;version="5.8.1";status=STABLE;uses:="org.apiguardian.ap
+ i,org.junit.jupiter.api.extension",org.junit.jupiter.api.extension;ve
+ rsion="5.8.1";status=STABLE;uses:="org.apiguardian.api,org.junit.jupi
+ ter.api,org.junit.jupiter.api.function,org.junit.jupiter.api.parallel
+ ,org.junit.platform.commons",org.junit.jupiter.api.extension.support;
+ version="5.8.1";status=EXPERIMENTAL;uses:="org.apiguardian.api,org.ju
+ nit.jupiter.api.extension",org.junit.jupiter.api.function;version="5.
+ 8.1";status=STABLE;uses:="org.apiguardian.api",org.junit.jupiter.api.
+ io;version="5.8.1";status=EXPERIMENTAL;uses:="org.apiguardian.api",or
+ g.junit.jupiter.api.parallel;version="5.8.1";status=EXPERIMENTAL;uses
+ :="org.apiguardian.api"
+Implementation-Title: junit-jupiter-api
+Implementation-Vendor: junit.org
+Implementation-Version: 5.8.1
+Import-Package: org.apiguardian.api;resolution:=optional;version="[1.1
+ ,2)",org.junit.platform.commons.logging;status=INTERNAL;version="[1.8
+ ,2)",kotlin;resolution:=optional,kotlin.collections;resolution:=optio
+ nal,kotlin.jvm.functions;resolution:=optional,kotlin.jvm.internal;res
+ olution:=optional,org.junit.jupiter.api;version="[5.8,6)",org.junit.j
+ upiter.api.extension;version="[5.8,6)",org.junit.jupiter.api.function
+ ;version="[5.8,6)",org.junit.jupiter.api.parallel;version="[5.8,6)",o
+ rg.junit.platform.commons;version="[1.8,2)",org.junit.platform.common
+ s.annotation;version="[1.8,2)",org.junit.platform.commons.function;ve
+ rsion="[1.8,2)",org.junit.platform.commons.support;version="[1.8,2)",
+ org.junit.platform.commons.util;version="[1.8,2)",org.opentest4j;vers
+ ion="[1.2,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Specification-Title: junit-jupiter-api
+Specification-Vendor: junit.org
+Specification-Version: 5.8.1
+

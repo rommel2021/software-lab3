@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Build-Date: 2021-09-22
+Build-Revision: 9883ffa5ab9ddb27ce33f6d2ace9f6be16403f40
+Build-Time: 20:54:36.897+0200
+Built-By: JUnit Team
+Bundle-ManifestVersion: 2
+Bundle-Name: JUnit Jupiter Params
+Bundle-SymbolicName: junit-jupiter-params
+Bundle-Version: 5.8.1
+Created-By: 11.0.12 (Eclipse Foundation 11.0.12+7)
+Export-Package: org.junit.jupiter.params;version="5.8.1";status=STABLE
+ ;uses:="org.apiguardian.api,org.junit.jupiter.api,org.junit.jupiter.a
+ pi.extension",org.junit.jupiter.params.aggregator;version="5.8.1";sta
+ tus=STABLE;uses:="kotlin,org.apiguardian.api,org.junit.jupiter.api.ex
+ tension,org.junit.platform.commons",org.junit.jupiter.params.converte
+ r;version="5.8.1";status=STABLE;uses:="org.apiguardian.api,org.junit.
+ jupiter.api.extension,org.junit.platform.commons",org.junit.jupiter.p
+ arams.provider;version="5.8.1";status=STABLE;uses:="org.apiguardian.a
+ pi,org.junit.jupiter.api.extension,org.junit.platform.commons",org.ju
+ nit.jupiter.params.support;version="5.8.1";status=STABLE;uses:="org.a
+ piguardian.api"
+Implementation-Title: junit-jupiter-params
+Implementation-Vendor: junit.org
+Implementation-Version: 5.8.1
+Import-Package: org.apiguardian.api;resolution:=optional;version="[1.1
+ ,2)",kotlin;resolution:=optional,kotlin.jvm.internal;resolution:=opti
+ onal,org.junit.jupiter.api;version="[5.8,6)",org.junit.jupiter.api.ex
+ tension;version="[5.8,6)",org.junit.jupiter.params.aggregator;version
+ ="[5.8,6)",org.junit.jupiter.params.converter;version="[5.8,6)",org.j
+ unit.jupiter.params.support;version="[5.8,6)",org.junit.platform.comm
+ ons;version="[1.8,2)",org.junit.platform.commons.function;version="[1
+ .8,2)",org.junit.platform.commons.support;version="[1.8,2)",org.junit
+ .platform.commons.util;version="[1.8,2)",org.junit.platform.commons.l
+ ogging;status=INTERNAL;version="[1.8,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Specification-Title: junit-jupiter-params
+Specification-Vendor: junit.org
+Specification-Version: 5.8.1
+

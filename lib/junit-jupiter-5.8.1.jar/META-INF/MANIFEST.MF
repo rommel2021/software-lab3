@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Build-Date: 2021-09-22
+Build-Revision: 9883ffa5ab9ddb27ce33f6d2ace9f6be16403f40
+Build-Time: 20:54:36.897+0200
+Built-By: JUnit Team
+Bundle-ManifestVersion: 2
+Bundle-Name: JUnit Jupiter (Aggregator)
+Bundle-SymbolicName: junit-jupiter
+Bundle-Version: 5.8.1
+Created-By: 11.0.12 (Eclipse Foundation 11.0.12+7)
+Implementation-Title: junit-jupiter
+Implementation-Vendor: junit.org
+Implementation-Version: 5.8.1
+Import-Package: org.junit.platform.commons.logging;status=INTERNAL;ver
+ sion="[1.8,2)"
+Specification-Title: junit-jupiter
+Specification-Vendor: junit.org
+Specification-Version: 5.8.1
+

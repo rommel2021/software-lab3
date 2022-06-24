@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1624798392241
+Build-Date: 2021-06-27
+Build-Revision: aa952a1b9d5b4e9cc0af853e2c140c2455b397be
+Build-Time: 14:53:10.089+0200
+Built-By: @API Guardian Team
+Bundle-Description: @API Guardian
+Bundle-DocURL: https://github.com/apiguardian-team/apiguardian
+Bundle-ManifestVersion: 2
+Bundle-Name: apiguardian-api
+Bundle-SymbolicName: org.apiguardian.api
+Bundle-Vendor: apiguardian.org
+Bundle-Version: 1.1.2
+Created-By: 11.0.11 (AdoptOpenJDK)
+Export-Package: org.apiguardian.api;version="1.1.2"
+Implementation-Title: apiguardian-api
+Implementation-Vendor: apiguardian.org
+Implementation-Version: 1.1.2
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
+Specification-Title: apiguardian-api
+Specification-Vendor: apiguardian.org
+Specification-Version: 1.1.2
+Tool: Bnd-5.3.0.202102221516
+

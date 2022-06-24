@@ -1,0 +1,43 @@
+Manifest-Version: 1.0
+Build-Date: 2021-09-22
+Build-Revision: 9883ffa5ab9ddb27ce33f6d2ace9f6be16403f40
+Build-Time: 20:54:36.897+0200
+Built-By: JUnit Team
+Bundle-ManifestVersion: 2
+Bundle-Name: JUnit Platform Engine API
+Bundle-SymbolicName: junit-platform-engine
+Bundle-Version: 1.8.1
+Created-By: 11.0.12 (Eclipse Foundation 11.0.12+7)
+Export-Package: org.junit.platform.engine;version="1.8.1";status=STABL
+ E;uses:="org.apiguardian.api,org.junit.platform.commons,org.junit.pla
+ tform.engine.reporting",org.junit.platform.engine.discovery;version="
+ 1.8.1";status=STABLE;uses:="org.apiguardian.api,org.junit.platform.co
+ mmons,org.junit.platform.engine",org.junit.platform.engine.reporting;
+ version="1.8.1";status=STABLE;uses:="org.apiguardian.api",org.junit.p
+ latform.engine.support.config;version="1.8.1";status=EXPERIMENTAL;use
+ s:="org.apiguardian.api,org.junit.platform.engine",org.junit.platform
+ .engine.support.descriptor;version="1.8.1";status=STABLE;uses:="org.a
+ piguardian.api,org.junit.platform.engine",org.junit.platform.engine.s
+ upport.discovery;version="1.8.1";status=EXPERIMENTAL;uses:="org.apigu
+ ardian.api,org.junit.platform.engine,org.junit.platform.engine.discov
+ ery",org.junit.platform.engine.support.filter;version="1.8.1";status=
+ DEPRECATED;uses:="org.apiguardian.api,org.junit.platform.commons.util
+ ,org.junit.platform.engine",org.junit.platform.engine.support.hierarc
+ hical;version="1.8.1";status=MAINTAINED;uses:="org.apiguardian.api,or
+ g.junit.platform.engine,org.opentest4j"
+Implementation-Title: junit-platform-engine
+Implementation-Vendor: junit.org
+Implementation-Version: 1.8.1
+Import-Package: org.apiguardian.api;resolution:=optional;version="[1.1
+ ,2)",org.junit.platform.commons.logging;status=INTERNAL;version="[1.8
+ ,2)",org.junit.platform.commons;version="[1.8,2)",org.junit.platform.
+ commons.function;version="[1.8,2)",org.junit.platform.commons.support
+ ;version="[1.8,2)",org.junit.platform.commons.util;version="[1.8,2)",
+ org.junit.platform.engine;version="[1.8,2)",org.junit.platform.engine
+ .discovery;version="[1.8,2)",org.junit.platform.engine.reporting;vers
+ ion="[1.8,2)",org.opentest4j;version="[1.2,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Specification-Title: junit-platform-engine
+Specification-Vendor: junit.org
+Specification-Version: 1.8.1
+

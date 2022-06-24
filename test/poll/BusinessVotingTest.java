@@ -33,9 +33,9 @@ class BusinessVotingTest {
 		//添加候选人,候选人类型为Proposal
 		ArrayList<Proposal> candidates = new ArrayList<>();
 		Proposal proposal = new Proposal("item", Calendar.getInstance());
-//		Proposal proposal1 = new Proposal("item2",Calendar.getInstance());
+		Proposal proposal1 = new Proposal("item2",Calendar.getInstance());
 		candidates.add(proposal);
-//		candidates.add(proposal1);
+		candidates.add(proposal1);
 		businessVote.addCandidates(candidates);
 
 		Map<Voter, Double> voters = new HashMap<>();
@@ -49,10 +49,10 @@ class BusinessVotingTest {
 		//添加投票者对候选项目的投票
 		HashSet<VoteItem<Proposal>> vote1 = new HashSet<>();//第一名投票者的票
 		vote1.add(new VoteItem(proposal, "支持"));
-//		vote1.add(new VoteItem<>(proposal1,"支持"));
+		vote1.add(new VoteItem<>(proposal1,"支持"));
 		HashSet<VoteItem<Proposal>> vote2 = new HashSet<>();//第2名投票者的票
 		vote2.add(new VoteItem(proposal, "支持"));
-//		vote2.add(new VoteItem(proposal1, "反对"));
+		vote2.add(new VoteItem(proposal1, "反对"));
 		Vote<Proposal> votesOf1 = new RealNameVote<>(vote1,v1);
 		Vote<Proposal> votesOf2 = new RealNameVote<>(vote2,v2);
 		businessVote.addVote(votesOf1);

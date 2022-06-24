@@ -1,9 +1,12 @@
 package vote;
 
+import java.util.Objects;
+
 //immutable
 public class VoteItem<C> {
 
 	// 本投票项所针对的候选对象
+	// 是一个投票人对一个候选人的选项
 	private C candidate;
 	// 对候选对象的具体投票选项，例如“支持”、“反对”等
 	// 无需保存具体数值，需要时可以从投票活动的VoteType对象中查询得到
@@ -11,17 +14,16 @@ public class VoteItem<C> {
 	private boolean isValid=true;
 
 	// Rep Invariants
-	// candidate必须的voteType类的options的key，
-	// value必须是“支持”、“反对”、“弃权”中的一种
+	// candidate不为空，
+	// value不为空
 	// Abstract Function
 	// candidate是到候选人的一个映射，value是到投票选项的映射
 	// Safety from Rep Exposure
-	// value和candidate都是private，不会泄露
+	// value和candidate都是private，而且candidate、value、isValid都是不可变类型的，不会泄露
 
-	private boolean checkRep() {
-		assert value.equals("支持")||value.equals("反对")||value.equals("弃权");
-		return false;
-
+	private void checkRep() {
+		assert value!=null;
+		assert candidate!=null;
 	}
 
 	/**
@@ -56,17 +58,19 @@ public class VoteItem<C> {
 
 	public void setValid(boolean valid) {
 		isValid = valid;
+		checkRep();
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		VoteItem<?> voteItem = (VoteItem<?>) o;
+		return isValid == voteItem.isValid && Objects.equals(candidate, voteItem.candidate) && Objects.equals(value, voteItem.value);
 	}
 
 	@Override
 	public int hashCode() {
-		// TODO
-		return 0;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		// TODO
-		return true;
+		return Objects.hash(candidate, value, isValid);
 	}
 }

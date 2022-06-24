@@ -8,6 +8,7 @@ import auxiliary.Proposal;
 import auxiliary.Voter;
 import pattern.SelectionStrategy;
 import pattern.StatisticsStrategy;
+import poll.Factory.PollFactory;
 import vote.Vote;
 import vote.VoteType;
 
@@ -21,6 +22,11 @@ public interface Poll<C> {
 	public static <C> Poll<C> create() {
 		// TODO
 		return new GeneralPollImpl<C>();
+//		return (Poll<C>) new BusinessVoting();
+	}
+
+	public static <C> Poll<C> create(String type){
+		return new PollFactory().create(type);
 	}
 
 	/**
@@ -53,7 +59,7 @@ public interface Poll<C> {
 	 * 
 	 * @param vote 一个投票人对全体候选对象的投票记录集合
 	 */
-	public void addVote(Vote<C> vote);
+	public void addVote(Vote<C> vote) throws Exception;
 
 	/**
 	 * 按规则计票

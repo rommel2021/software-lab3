@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import auxiliary.Voter;
 import org.junit.jupiter.api.Test;
+import pattern.BusinessStatistics;
 import pattern.SelectionStrategy;
 import pattern.StatisticsStrategy;
 import vote.Vote;
@@ -19,7 +20,7 @@ class PollTest {
     // 创建一个引用类型为poll的对象，设置基本信息，添加候选人和投票者
 
     @Test
-    void test() {
+    void test() throws Exception {
         Poll<String> poll = Poll.create();
         HashMap<String, Integer> map = new HashMap<>();
         map.put("支持", 2);
@@ -53,12 +54,12 @@ class PollTest {
 		poll.addVote(votesOf2);
 
 		//按规则计票
-        poll.statistics(new StatisticsStrategy() {
-           //TODO
-        });
-        poll.selection(new SelectionStrategy() {
-            //TODO
-        });
+        StatisticsStrategy statistics = new BusinessStatistics();
+        poll.statistics(statistics);
+
+//        poll.selection(new SelectionStrategy() {
+//            //TODO
+//        });
 
         //判断结果是否符合预期
 //        assertEquals("",poll.result());

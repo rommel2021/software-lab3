@@ -1,8 +1,11 @@
 package vote;
 
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 //immutable
 public class VoteType {
@@ -15,7 +18,7 @@ public class VoteType {
 	// Abstract Function
 	// Map的key不为null，value为整数（可正可负可为零）
 	// Safety from Rep Exposure
-	// options设置为private的，不会泄露
+	// options设置为private的，并且没有获取Map的方法，不会泄露
 
 	private void checkRep() {
 		// TODO
@@ -44,9 +47,22 @@ public class VoteType {
 	 * 
 	 * @param regex 遵循特定语法的、包含投票类型信息的字符串（待任务12再考虑）
 	 */
-	public VoteType(String regex) {
-		// TODO
+	public VoteType(String regex) throws Exception {
+		//“喜欢”(2)|“不喜欢”(0)|“无所谓”(1)
+		//“支持”|“反对”|“弃权”
+		//(\“[\u4e00-\u9fa5]+\”(\(-?[0-9]+\))?\|)+\“[\u4e00-\u9fa5]+\”(\(-?[0-9]+\))?
+		// ?(\(-?[0-9]+\))
+		Pattern str=Pattern.compile("(\\“[\\u4e00-\\u9fa5]+\\”(\\(-?[0-9]+\\))?\\|)+\\“[\\u4e00-\\u9fa5]+\\”(\\(-?[0-9]+\\))?");
+		Matcher m=str.matcher(regex);
+		if(m.matches()){
+			System.out.println();
+		}else{
+			throw new Exception("输入的表达式不匹配");
+		}
+
 	}
+
+
 
 	/** done
 	 * 判断一个投票选项是否合法（用于Poll中对选票的合法性检查）
@@ -84,6 +100,10 @@ public class VoteType {
 				return options.get(option);
 		}
 		return 0;
+	}
+
+	public Map<String,Integer> getOptions(){
+		return new HashMap<String,Integer>(options);
 	}
 
 	@Override

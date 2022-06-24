@@ -24,11 +24,12 @@ public class BusinessVoting extends GeneralPollImpl<Proposal> implements Poll<Pr
     public String result() {
         String str="";
         for(Proposal p:results.keySet()){
-            if(results.get(p)>0.66){
-                str+="结果为："+results.get(p)+",通过";
-                return str;
+            if(statistics.get(p)>0.66){
+                str+="结果为："+statistics.get(p)+",通过\n";
+            }else{
+                str+="结果为："+statistics.get(p)+",未通过\n";
             }
         }
-        return "未通过";
+        return str;
     }
 }
